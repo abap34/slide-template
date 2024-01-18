@@ -1,0 +1,3 @@
+allowLocalFiles: true
+html: true
+theme: build/honwaka-theme/style.css
