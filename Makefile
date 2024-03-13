@@ -1,8 +1,13 @@
 SRC_DIR = slides
 BUILD_DIR = build
 SRC_FILES = $(wildcard $(SRC_DIR)/*[0-9]_*.md)
+HEADER_FILE = $(firstword $(SRC_FILES))
+REST_FILES = $(filter-out $(HEADER_FILE), $(SRC_FILES))
 OUTPUT_FILE = $(BUILD_DIR)/slide.md
+THEME_NAME = honwaka-theme
+THEME_REPO = https://github.com/abap34/honwaka-theme
 MARPRC_FILE = .marprc.yml
+
 
 all: clean preprocess pdf html pptx
 
@@ -12,14 +17,17 @@ preprocess: $(OUTPUT_FILE)
 $(OUTPUT_FILE): $(SRC_FILES)
 	@mkdir -p $(BUILD_DIR)
 	@echo "Clone theme..."
-	@git clone https://github.com/abap34/honwaka-theme
-	@mv honwaka-theme $(BUILD_DIR)/
+	@git clone $(THEME_REPO)
+	@mv $(THEME_NAME) $(BUILD_DIR)
 	@echo "Creating slide file..."
-	@cat $(SRC_DIR)/header.md > $(OUTPUT_FILE)
 	@echo "N_SECTION = $(words $(SRC_FILES))"
-	@for file in $(SRC_FILES); do \
+
+	@echo "HEADER_FILE = $(HEADER_FILE)"
+	@cat $(HEADER_FILE) > $(OUTPUT_FILE)
+	
+	@for file in $(REST_FILES); do \
 		echo "### section: $$file"; \
-		tail -n +7 "$$file" >> $(OUTPUT_FILE); \
+		awk 'BEGIN { found = 0; } { if (found == 2) print; if ($$0 == "---") found++; }' $$file >> $(OUTPUT_FILE); \
 	done
 
 pdf: preprocess
