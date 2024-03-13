@@ -1,0 +1,29 @@
+name: Build Slide and Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup
+        run: |
+            make preprocess
+
+      - name: Marp Build (README)
+        uses: docker://marpteam/marp-cli:v3.0.2
+        with:
+            args: build/slide.md -o build/index.html
+        env:
+            MARP_USER: root:root
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
