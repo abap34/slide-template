@@ -1,8 +1,9 @@
-# LT-Template
+# slide-template
 
 [![Build Slide and Deploy](https://github.com/abap34/LT-template/actions/workflows/build.yaml/badge.svg)](https://github.com/abap34/LT-template/actions/workflows/build.yaml)
 
-Template repository for lightning talk with [Marp](https://marp.app/)
+Template repository for creating slide with [Marp](https://marp.app/).
+
 
 ## Usage
 
@@ -26,10 +27,18 @@ In this template, [honwaka-theme](https://github.com/abap34/honwaka-theme) is us
 2. Edit `.marprc.yml`
    - Change `theme` to your theme.
 
+## Local Run
+
+1. Install [Marp CLI](https://github.com/marp-team/marp-cli)
+2. `make all` build slide to `build/`.
+   1. This create `.html`, `.pdf`, and `.pptx` files. `make html`, `make pdf`, `make pptx` are also available.
+3. `make preview` to start local server and open browser to preview your slide.
+ 
 ## Warning
 
-- When you separate slide to multiple files, This template concatenate under below rules.
-  - Files are sorted before concatenation by it's name. So, {number}_{title}.md is recommended. 
-  - **YAML front matter is only adapted from the first file.**
-    - The first file is expanded as is. Files after the first file are concatenated without YAML front matter.
+When you separate slide to multiple files, This template concatenate under below rules.
+
+- Files are sorted before concatenation by it's name. So, {number}_{title}.md is recommended. 
+- **YAML front matter is only adapted from the first file.**
+ - The first file is expanded as is. Files after the first file are concatenated without YAML front matter.
 
