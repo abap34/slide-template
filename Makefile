@@ -7,8 +7,8 @@ MARPRC_FILE = .marprc.yml
 all: clean preprocess pdf html pptx
 
 preprocess: $(OUTPUT_FILE)
-	@echo "Compiling slides..."
-
+	@echo "Preprocessing..."
+	
 $(OUTPUT_FILE): $(SRC_FILES)
 	@mkdir -p $(BUILD_DIR)
 	@echo "Clone theme..."
