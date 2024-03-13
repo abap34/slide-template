@@ -7,7 +7,7 @@ theme: honwaka
 
 <!-- _header: 自己紹介-->
 
-<div class="section"> イントロ </div>
+<div class="section"> Introduction </div>
 
 # Write Intoduction Here
 
