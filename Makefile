@@ -22,6 +22,8 @@ $(OUTPUT_FILE): $(SRC_FILES)
 	@echo "Creating slide file..."
 	@echo "N_SECTION = $(words $(SRC_FILES))"
 
+	@cp -r $(SRC_DIR)/* $(BUILD_DIR)/
+
 	@echo "HEADER_FILE = $(HEADER_FILE)"
 	@cat $(HEADER_FILE) > $(OUTPUT_FILE)
 	
