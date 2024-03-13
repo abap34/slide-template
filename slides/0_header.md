@@ -7,8 +7,8 @@ theme: honwaka
 
 <!-- _class: lead -->
 
-# Lighitning Talk
-## Template.
+# Slide Template
+## For Marp Users
 
 @name
 2023/12/31
