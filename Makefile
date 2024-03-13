@@ -27,7 +27,7 @@ $(OUTPUT_FILE): $(SRC_FILES)
 	
 	@for file in $(REST_FILES); do \
 		echo "### section: $$file"; \
-		awk 'BEGIN { found = 0; } { if (found == 2) print; if ($$0 == "---") found++; }' $$file >> $(OUTPUT_FILE); \
+		awk 'BEGIN { found = 0; } { if (found >= 2) print; if ($$0 == "---") found++; }' $$file >> $(OUTPUT_FILE); \
 	done
 
 pdf: preprocess
