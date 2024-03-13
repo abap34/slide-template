@@ -6,9 +6,9 @@ theme: honwaka
 ---
 
 
-<!-- _header: おまけ -->
+<!-- _header: Appendix -->
 
-<div class="section"> 付録・参考文献 </div>
+<div class="section"> Appendix </div>
 
 <style scoped>
   {
@@ -16,10 +16,5 @@ theme: honwaka
   }
 </style>
 
+# Outro Here
 
-右から左への読み方
-
----
-
-
-    

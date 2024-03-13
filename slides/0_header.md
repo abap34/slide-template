@@ -7,10 +7,10 @@ theme: honwaka
 
 <!-- _class: lead -->
 
-# 徒歩で歩く
-## Japan? No Tokyo 
+# Lighitning Talk
+## Template.
 
-@abap34
+@name
 2023/12/31
 
 ---

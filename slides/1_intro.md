@@ -9,6 +9,7 @@ theme: honwaka
 
 <div class="section"> イントロ </div>
 
-# のぼり棒グラフ
+# Write Intoduction Here
+
 
 ---
