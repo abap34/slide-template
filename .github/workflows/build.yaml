@@ -16,10 +16,10 @@ jobs:
         run: |
             make preprocess
 
-      - name: Marp Build (README)
-        uses: docker://marpteam/marp-cli:v3.0.2
+      - name: Marp Build 
+        uses: docker://marpteam/marp-cli:v3.4.0
         with:
-            args: build/slide.md -o build/index.html
+            args: build/slide.md --config-file .marprc.yml --output build/index.html
         env:
             MARP_USER: root:root
 
