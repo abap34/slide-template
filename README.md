@@ -12,7 +12,7 @@ This is a template repository for creating slides with [Marp](https://marp.app/)
 3. Write your slide content in the `slides` directory:
    - To split your slide into multiple files, create `{number}_{title}.md` files in the `slides` directory.
    - Files are sorted numerically by number and then concatenated. See the "Warning" section for details.
-   - Files under the `slides` directory will be copied to the `build` directory. Therefore, please place images and other assets here."
+   - Files under the `slides` directory will be copied to the `build` directory. Therefore, please place images and other assets here.
 4. Push changes to the `main` branch.
 5. Your slide will be published at `https://<username>.github.io/<repository-name>` 🤗
 
@@ -21,7 +21,7 @@ This is a template repository for creating slides with [Marp](https://marp.app/)
 This template uses the [honwaka-theme](https://github.com/abap34/honwaka-theme) as the default theme. You can customize the theme by editing the `Makefile` and `.marprc.yml` files.
 
 1. Edit `Makefile`:
-   - Modify `THEME_NAME` and `THEME_REPO` according to your chosen theme.
+   - Modify `THEME_NAME` and `THEME_REPO` to your theme. (`THEME_REPO = https://github.com/{username}/{theme-repository}`. and `THEME_NAME = {theme-repository}`)
 2. Edit `.marprc.yml`:
    - Change the `theme` field to your desired theme.
 
@@ -30,7 +30,7 @@ This template uses the [honwaka-theme](https://github.com/abap34/honwaka-theme) 
 1. Install the [Marp CLI](https://github.com/marp-team/marp-cli).
 2. Run `make all` to build the slide in the `build/` directory:
    - This command generates `.html`, `.pdf`, and `.pptx` files. Individual targets like `make html`, `make pdf`, and `make pptx` are also available.
-3. Use `make preview` to start a local server and open your slide in a browser for preview.
+3. `make preview` to start a local server and open your slide in a browser for preview.
 
 ## Warning
 
