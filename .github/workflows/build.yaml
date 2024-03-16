@@ -14,7 +14,7 @@ jobs:
 
       - name: Setup
         run: |
-            make preprocess
+            make setup
 
       - name: Marp Build 
         uses: docker://marpteam/marp-cli:v3.4.0
