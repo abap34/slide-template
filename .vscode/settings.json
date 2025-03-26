@@ -1,0 +1,5 @@
+{
+    "markdown.copyFiles.destination": {
+        "slides/*.md": "img/${fileName}"
+    }
+}
