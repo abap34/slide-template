@@ -1,86 +1,322 @@
 {
-	"lead": {
-		"prefix": "leadpage",
-		"body": [
-			"---",
-			"<!-- _class: lead -->"
-		],
-		"description": "lead page"
-	},
-	"newpage": {
-		"prefix": "newpage",
-		"body": [
-			"---",
-			"<!-- _header: $1 -->",
-		],
-		"description": "new page"
-	},
-	"columns": {
-		"prefix": "columns",
-		"body": [
-			"<div class=\"columns\">",
-			"",
-			"$1",
-			"",
-			"</div>"
-		],
-		"description": "columns"
-	},
-	"emptydiv": {
-		"prefix": "emptydiv",
-		"body": [
-			"<div>",
-			"",
-			"$2",
-			"",
-			"</div>"
-		],
-		"description": "empty div for columns layout"
-	},
-	"div": {
-		"prefix": "div",
-		"body": [
-			"<div class=\"$1\">",
-			"",
-			"$2",
-			"",
-			"</div>"
-		]
-	},
-	"template": {
-		"prefix": "honwaka-template",
-		"body": [
-			"---",
-			"marp: true",
-			"paginate: true",
-			"math: mathjax",
-			"theme: honwaka",
-			"---",
-			"$$",
-			"\\newcommand{\\argmin}{\\mathop{\\rm arg~min}\\limits}",
-			"$$",
-		]
-	},
-	"header": {
-		"prefix": "header",
-		"body": [
-			"<!-- _header: $1 -->"
-		]
-	},
-	"dot-text": {
-		"prefix": "span",
-		"body": [
-			"<span class=\"$1\">$2</span>"
-		]
-	},
-	"center": {
-		"prefix": "center",
-		"body": [
-			"<div style=\"text-align: center;\">",
-			"",
-			"$1",
-			"",
-			"</div>"
-		]
-	},
+  "template": {
+    "prefix": "honwaka-template",
+    "body": [
+      "---",
+      "marp: true",
+      "paginate: true",
+      "math: mathjax",
+      "theme: honwaka",
+      "---",
+      "$$",
+      "\\newcommand{\\argmin}{\\mathop{\\rm arg~min}\\limits}",
+      "$$"
+    ],
+    "description": "Honwaka slide template"
+  },
+  "lead": {
+    "prefix": "leadpage",
+    "body": [
+      "---",
+      "<!-- _class: lead -->"
+    ],
+    "description": "Lead page"
+  },
+  "newpage": {
+    "prefix": "newpage",
+    "body": [
+      "---",
+      "<!-- _header: $1 -->"
+    ],
+    "description": "New page with header"
+  },
+  "header": {
+    "prefix": "header",
+    "body": [
+      "<!-- _header: $1 -->"
+    ],
+    "description": "Slide header"
+  },
+  "columns": {
+    "prefix": "columns",
+    "body": [
+      "<div class=\"columns\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "2 columns layout"
+  },
+  "columns3": {
+    "prefix": "columns3",
+    "body": [
+      "<div class=\"columns-3\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "3 columns layout"
+  },
+  "columns4": {
+    "prefix": "columns4",
+    "body": [
+      "<div class=\"columns-4\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "4 columns layout"
+  },
+  "def": {
+    "prefix": "def",
+    "body": [
+      "<div class=\"def\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "Definition box"
+  },
+  "proof": {
+    "prefix": "proof",
+    "body": [
+      "<div class=\"proof\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "Proof box"
+  },
+  "thm": {
+    "prefix": "thm",
+    "body": [
+      "<div class=\"thm\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "Theorem box"
+  },
+  "box": {
+    "prefix": "box",
+    "body": [
+      "<div class=\"box\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "Generic box"
+  },
+  "center": {
+    "prefix": "center",
+    "body": [
+      "<div class=\"center\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "Center aligned block"
+  },
+  "dot-text": {
+    "prefix": "dottext",
+    "body": [
+      "<span class=\"dot-text\">$1</span>"
+    ],
+    "description": "Dot emphasis text"
+  },
+  "orangelined": {
+    "prefix": "orangelined",
+    "body": [
+      "<span class=\"orangelined\">$1</span>"
+    ],
+    "description": "Orange underline marker"
+  },
+  "bluelined": {
+    "prefix": "bluelined",
+    "body": [
+      "<span class=\"bluelined\">$1</span>"
+    ],
+    "description": "Blue highlight marker"
+  },
+  "red": {
+    "prefix": "red",
+    "body": [
+      "<span class=\"red\">$1</span>"
+    ],
+    "description": "Red bold text"
+  },
+  "green": {
+    "prefix": "green",
+    "body": [
+      "<span class=\"green\">$1</span>"
+    ],
+    "description": "Green bold text"
+  },
+  "gray": {
+    "prefix": "gray",
+    "body": [
+      "<span class=\"gray\">$1</span>"
+    ],
+    "description": "Gray text"
+  },
+  "small": {
+    "prefix": "small",
+    "body": [
+      "<span style=\"font-size: 0.8em;\">$1</span>"
+    ],
+    "description": "Small inline text"
+  },
+  "smalldiv": {
+    "prefix": "smalldiv",
+    "body": [
+      "<div style=\"font-size: 0.8em;\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "Small text block"
+  },
+  "div": {
+    "prefix": "div",
+    "body": [
+      "<div class=\"$1\">",
+      "",
+      "$2",
+      "",
+      "</div>"
+    ],
+    "description": "Generic div"
+  },
+  "emptydiv": {
+    "prefix": "emptydiv",
+    "body": [
+      "<div>",
+      "",
+      "$2",
+      "",
+      "</div>"
+    ],
+    "description": "Empty div for layout"
+  },
+  "toc": {
+    "prefix": "toc",
+    "body": [
+      "<div class=\"toc\">",
+      "",
+      "$1",
+      "",
+      "</div>"
+    ],
+    "description": "TOC container"
+  },
+  "toc-sec": {
+    "prefix": "tocsec",
+    "body": [
+      "<div class=\"toc-sec\">",
+      "<div class=\"secname\">$1</div>",
+      "<div class=\"content\">",
+      "<ul>",
+      "  <li>$2</li>",
+      "</ul>",
+      "</div>",
+      "</div>"
+    ],
+    "description": "Section in TOC"
+  },
+  "cite": {
+    "prefix": "cite",
+    "body": [
+      "<div class=\"cite\">",
+      "$1",
+      "</div>"
+    ],
+    "description": "Citation / bottom text"
+  },
+  "mathblock": {
+    "prefix": "mathblock",
+    "body": [
+      "$$",
+      "$1",
+      "$$"
+    ],
+    "description": "MathJax block"
+  },
+  "codecaption": {
+    "prefix": "codecaption",
+    "body": [
+      "<div class=\"code-with-caption\">",
+      "```$1",
+      "$2",
+      "```",
+      "<div class=\"caption\">$3</div>",
+      "</div>"
+    ],
+    "description": "Code block with caption"
+  },
+  "img-center": {
+    "prefix": "imgcenter",
+    "body": [
+      "![center]($1)"
+    ],
+    "description": "Centered image"
+  },
+  "section-label": {
+    "prefix": "sectionlabel",
+    "body": [
+      "<div class=\"section\">",
+      "$1",
+      "</div>"
+    ],
+    "description": "Top-right section label"
+  },
+  "toc-list": {
+    "prefix": "toclist",
+    "body": [
+      "<ul>",
+      "  <li>$1</li>",
+      "</ul>"
+    ],
+    "description": "TOC unordered list"
+  },
+  "label": {
+    "prefix": "label",
+    "body": [
+      "<span style=\"border: 1px solid #aaa; padding: 0 4px; border-radius: 4px; font-size: 0.9em; background: #eee;\">$1</span>"
+    ],
+    "description": "Labeled span"
+  },
+  "badge": {
+    "prefix": "badge",
+    "body": [
+      "<span style=\"background-color: #ff9800; color: white; border-radius: 10px; padding: 0 6px; font-size: 0.7em;\">$1</span>"
+    ],
+    "description": "Badge-style label"
+  },
+  "bg-lightblue": {
+    "prefix": "bgblue",
+    "body": [
+      "<div style=\"background-color: #e3f2fd; padding: 1em; border-radius: 1em;\">",
+      "$1",
+      "</div>"
+    ],
+    "description": "Light blue background box"
+  },
+  "bg-orange": {
+    "prefix": "bgorange",
+    "body": [
+      "<div style=\"background-color: #fff3e0; padding: 1em; border-radius: 1em;\">",
+      "$1",
+      "</div>"
+    ],
+    "description": "Light orange background box"
+  }
 }
