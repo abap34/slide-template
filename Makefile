@@ -17,8 +17,12 @@ setup: $(OUTPUT_FILE)
 
 $(OUTPUT_FILE): $(SRC_FILES)
 	@mkdir -p $(BUILD_DIR)
-	@echo "Clone theme..."
-	@git clone $(THEME_REPO) $(BUILD_DIR)/$(THEME_NAME)
+	@if [ ! -d "$(BUILD_DIR)/$(THEME_NAME)" ]; then \
+		echo "Clone theme..."; \
+		git clone $(THEME_REPO) $(BUILD_DIR)/$(THEME_NAME); \
+	else \
+		echo "Theme already exists, skipping clone..."; \
+	fi
 	@echo "Creating slide file..."
 	@echo "N_SECTION = $(words $(SRC_FILES))"
 	@cp -r $(SRC_DIR)/* $(BUILD_DIR)/
@@ -41,9 +45,11 @@ pptx: setup
 	@echo "Creating PPTX..."
 	@marp $(OUTPUT_FILE) --config-file $(MARPRC_FILE) --output $(BUILD_DIR)/slide.pptx
 
-preview: clean setup
-	@echo "Creating preview..."
-	@marp $(OUTPUT_FILE) --config-file $(MARPRC_FILE) --preview
+preview: setup
+	@echo "Starting preview with auto-reload..."
+	@echo "Watching $(SRC_DIR) for changes..."
+	@fswatch -o $(SRC_DIR) | xargs -n1 -I{} sh -c 'make setup && echo "Rebuilt slide.md"' & \
+	marp $(OUTPUT_FILE) --config-file $(MARPRC_FILE) --preview --watch
 
 clean:
 	@echo "Cleaning up..."

@@ -27,10 +27,21 @@ This template uses the [honwaka-theme](https://github.com/abap34/honwaka-theme) 
 
 ## Build Slide Locally
 
+### Prerequisites
+
 1. Install the [Marp CLI](https://github.com/marp-team/marp-cli).
-2. Run `make all` to build the slide in the `build/` directory:
+2. Install [fswatch](https://github.com/emcrisostomo/fswatch) (required for `make preview`):
+   ```bash
+   brew install fswatch
+   ```
+
+### Build Commands
+
+1. Run `make all` to build the slide in the `build/` directory:
    - This command generates `.html`, `.pdf`, and `.pptx` files. Individual targets like `make html`, `make pdf`, and `make pptx` are also available.
-3. `make preview` to start a local server and open your slide in a browser for preview.
+2. `make preview` to start a local server with auto-reload:
+   - Opens your slide in a browser for preview.
+   - Automatically watches the `slides/` directory for changes and rebuilds the slide when files are modified.
 
 ## Warning
 
